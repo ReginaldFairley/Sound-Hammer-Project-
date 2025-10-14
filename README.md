@@ -26,6 +26,7 @@ GUIDE: Component's Purpose / Example of commponent
 *Lights up upon impact*
 
   -- Power Supply --
+  
 6. Rechargeable power source / Li-Po Battery (3.7V 450 mAh)
 *Powers entire system*
 
@@ -39,26 +40,30 @@ GUIDE: Component's Purpose / Example of commponent
 *For final wire management*
 
    -- Wiring & Resistors --
-10. Wiring & Connectors / Female Jumper wires
+   
+11. Wiring & Connectors / Female Jumper wires
 *Used for breadboard/prototyping*
 
-11. 220Ω Resistors (for LEDs)
+12. 220Ω Resistors (for LEDs)
 *Prevent overcurrent*
 
-12. 10kΩ Resistors (for pull-ups)
+13. 10kΩ Resistors (for pull-ups)
 *Prevent overcurrent*  
  
   -- Mechanical & 3D Print Supplies --
+  
 13. Structural shell / 3D-Printed Hammer Body
 14. Grip Material / Rubber grip tape or silicone wrap
 15. Fasteners / M3 screws, standoffs
 16. Foam or Vibration Dampening / For sensor cushioning
+ 
   -- Tools Required --
 17. Circuit assembly / Soldering iron + solder
 18. Debugging/testing / Multimeter
 19. Fixing components inside hammer / Hot Glue Gun
 20. Structural fabrication / 3D Printer
 21. Wiring / Wire strippers or cutters
+ 
   -- Testing & Debugging Components --
 22. Arduino Programming / USB to Serial cable
 23. Prototyping before permanent soldering / Cheap Breadboard
