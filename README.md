@@ -82,7 +82,7 @@ _(Research what works best for you personally)_
     
 24. Arduino IDE or PlatformIO serial debug / Serial monitor software
 
-## Assembly Instructions
+## Assembly Instructions on how to Complete The Rest of Project
 1. Organize the hardware components you will use for the entire process
    
 ### -- Tools & Software --
