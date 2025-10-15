@@ -1,1 +1,5 @@
 The files in this folder contain to the Ki-Cade Schematic mentioned in the Final Report
+Hammer.kicad_pcb is the file for the pcb if you were to design one
+Hammer.kicad_prl is the saved preferred settings specific to the project
+Hammer.kicad_pro is the project file itself that holds the others
+Hammer.kicad_sch is the schematic file
