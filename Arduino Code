@@ -1,0 +1,107 @@
+/**************************************************************************
+ * Fabrication Sound Hammer
+ * Author: Reginald Fairley Jr.
+ * Board: Arduino Nano Every
+ * 
+ * Description:
+ *  Reads impact data from an LSM6DSV32XTR IMU sensor.
+ *  On impact detection, triggers sound (Piezo) and LED animation (NeoPixel).
+ *
+ * Components:
+ *  - Arduino Nano Every
+ *  - LSM6DSV32XTR (I2C)
+ *  - Piezo buzzer (Digital pin 8)
+ *  - NeoPixel strip (Digital pin 6)
+ *  - Li-Po Battery + Boost + Charger Circuit
+ **************************************************************************/
+
+#include <Wire.h>
+#include <Adafruit_NeoPixel.h>
+#include <Arduino_LSM6DSOX.h> // Compatible with LSM6DSV series
+//#include <Adafruit_LSM6DSV32X.h> // Use this library if installed
+
+// =============================
+// PIN CONFIGURATION
+// =============================
+#define NEOPIXEL_PIN 6
+#define PIEZO_PIN 8
+#define NUM_PIXELS 8          // Number of NeoPixels in your setup
+
+// =============================
+// OBJECTS
+// =============================
+Adafruit_NeoPixel strip(NUM_PIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
+
+// =============================
+// IMPACT DETECTION SETTINGS
+// =============================
+const float IMPACT_THRESHOLD = 2.0; // Acceleration threshold (g) for impact
+const unsigned long IMPACT_COOLDOWN_MS = 400; // Minimum delay between triggers
+unsigned long lastImpactTime = 0;
+
+// =============================
+// SETUP
+// =============================
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+  
+  strip.begin();
+  strip.show(); // Turn off all LEDs
+
+  pinMode(PIEZO_PIN, OUTPUT);
+
+  // Initialize IMU
+  if (!IMU.begin()) {
+    Serial.println("Failed to detect IMU sensor!");
+    while (1);
+  }
+  
+  Serial.println("Fabrication Sound Hammer Initialized.");
+  Serial.println("Waiting for impact...");
+}
+
+// =============================
+// MAIN LOOP
+// =============================
+void loop() {
+  float x, y, z;
+  unsigned long currentTime = millis();
+
+  // Read acceleration data
+  if (IMU.accelerationAvailable()) {
+    IMU.readAcceleration(x, y, z);
+    
+    // Calculate the magnitude of the acceleration vector
+    float magnitude = sqrt(x*x + y*y + z*z);
+    
+    // Detect impact above threshold
+    if (magnitude > IMPACT_THRESHOLD && (currentTime - lastImpactTime > IMPACT_COOLDOWN_MS)) {
+      lastImpactTime = currentTime;
+      Serial.print("Impact detected! Magnitude: ");
+      Serial.println(magnitude);
+
+      playImpactEffects();
+    }
+  }
+}
+
+// =============================
+// IMPACT EFFECTS
+// =============================
+void playImpactEffects() {
+  // Play a short tone
+  tone(PIEZO_PIN, 800, 100); // 800Hz tone for 100ms
+  
+  // Flash LED animation
+  for (int i = 0; i < NUM_PIXELS; i++) {
+    strip.setPixelColor(i, strip.Color(255, 50, 0)); // Orange burst
+  }
+  strip.show();
+  delay(100);
+
+  for (int i = 0; i < NUM_PIXELS; i++) {
+    strip.setPixelColor(i, strip.Color(0, 0, 0)); // Off
+  }
+  strip.show();
+}
