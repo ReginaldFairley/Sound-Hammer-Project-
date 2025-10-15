@@ -31,7 +31,7 @@ _(Research what works best for you personally)_
 4. LED Feedback / LEDS (Any Color or Quantity) →
 *Lights up upon impact*
 
-   -- Power Supply --
+### -- Power Supply --
   
 5. Rechargeable power source / Li-Po Battery (3.7V 450 mAh) →
 *Powers entire system*
@@ -45,7 +45,7 @@ _(Research what works best for you personally)_
 8. Insulation / Heat-shrink tubing & tape →
 *For final wire management*
 
-   -- Wiring & Resistors --
+### -- Wiring & Resistors --
    
 9. Wiring & Connectors / Female Jumper wires →
 *Used for breadboard/prototyping*
@@ -56,7 +56,7 @@ _(Research what works best for you personally)_
 11. 10kΩ Resistors (for pull-ups) →
 *Prevent overcurrent*  
  
-  -- Mechanical & 3D Print Supplies --
+### -- Mechanical & 3D Print Supplies --
   
 12. Structural shell / 3D-Printed Hammer Body
     
@@ -66,7 +66,7 @@ _(Research what works best for you personally)_
     
 15. Foam or Vibration Dampening / For sensor cushioning
  
-  -- Tools Required --
+### -- Tools Required --
   
 16. Circuit assembly / Soldering iron + solder
     
@@ -78,7 +78,7 @@ _(Research what works best for you personally)_
     
 20. Wiring / Wire strippers or cutters
  
-  -- Testing & Debugging Components --
+### -- Testing & Debugging Components --
   
 21. Arduino Programming / USB to Serial cable
     
@@ -91,7 +91,7 @@ _(Research what works best for you personally)_
 ## Assembly Instructions
 1. Organize the hardware components you will use for the entire process
    
-  -- Tools & Software --
+### -- Tools & Software --
 
 2. Acquire the following tools:
    - Soldering iron * solder
@@ -104,7 +104,7 @@ _(Research what works best for you personally)_
    - **Arduino IDE / PlatformIO:** firmware upload
    - **3D printer:** fabrication of hammer casing
 
-  -- Overview of System Connections --
+### -- Overview of System Connections --
   
 4. <ins>Recognize the Power Flow:</ins>
 
@@ -118,7 +118,7 @@ _(Research what works best for you personally)_
    
    Arduino Nano → RGB LEDs (Digital Pin w/ 220Ω resistor)
 
-  -- KiCad Schematic Design --
+### -- KiCad Schematic Design --
   
 6. Open KiCad and create a new project
 
@@ -133,7 +133,7 @@ _(Research what works best for you personally)_
 10. Generate ERC (Electrical Rules Check) report — fix any open pins
 11. Export the file to PDF, this is the schematic
 
-  -- Mechanical Assembly Steps --
+### -- Mechanical Assembly Steps --
   
 12. Slice and print both hammer head and handle in your chosen material (PLA for simplicity, PETG for strength)
 
@@ -149,7 +149,7 @@ _(Research what works best for you personally)_
    - Small sound outlet for the piezo buzzer
 17. Sand edges smooth for safety
 
-  -- Electrical Assembly Steps --
+### -- Electrical Assembly Steps --
   
 18. Mount the Li-Po battery inside the handle cavity.
 
@@ -177,14 +177,14 @@ _(Research what works best for you personally)_
     - Resistor (220 Ω) → Between Arduino pin and LED input
     - VCC → 5V from Boost Converter
     - GND → Common ground
-*
-**Test using the Adafruit_NeoPixel example sketch to confirm functionality***
+
+***Test using the Adafruit_NeoPixel example sketch to confirm functionality***
 
 25. Connect the Piezo Buzzer
     - Possitive side → D8 _(Digital Output for sound)_
     - Negative side → GND _Commond ground_
 
-   -- Breadboard Testing --
+### -- Breadboard Testing --
 
 26. Assemble all components on a full-size breadboard before soldering
 
@@ -194,7 +194,7 @@ _(Research what works best for you personally)_
     - Buzzer responds to motion
     - Power circuit holds stable at 5V
 
-  -- Final Integration --
+### -- Final Integration --
   
 28. Transfer electronics from breadboard to perfboard or custom PCB (optional)
 
@@ -206,7 +206,7 @@ _(Research what works best for you personally)_
 
 32. Snap or screw the hammer head and handle together
 
-  -- Firmware Installation --
+### -- Firmware Installation --
   
 33. Connect Arduino Nano via USB
 
