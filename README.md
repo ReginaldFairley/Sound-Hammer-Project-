@@ -2,18 +2,12 @@
 ## Description
 The Fabrication Sound Hammer is an interactive impact-responsive device that combines sound, light, and motion detection to create a dynamic experience. Designed for durability and interactivity, the hammer integrates electronic sensors, microcontroller-based logic, and programmable behavior into a functional, structurally reinforced design
 
-## Goals & Features
-**Impact Detection** - Detects when the hammer strikes a surface
+## Material in Repository
+**Power Schematic** - Ki-Cade Schematic file on how the power should work for the hammer
 
-**Sound Effects** - Generates sound based on impact force
+**3D Model of Hammer** - Fusion Autodesk 
 
-**Lighting Feedback** - LEDs respond to impact intensity
-
-**Durability** - Designed to withstand repeated impacts
-
-**Power Supply** - Battery-operated with rechargeable capability
-
-**Programmability** - Microcontroller firmware can be updated
+**Arduino** - LEDs respond to impact intensity
 
 ## Hardware Components
 GUIDE: Component's Purpose / Example of commponent
