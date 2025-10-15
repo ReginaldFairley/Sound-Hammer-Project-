@@ -2,6 +2,8 @@
 ## Description
 The Fabrication Sound Hammer is an interactive impact-responsive device that combines sound, light, and motion detection to create a dynamic experience. Designed for durability and interactivity, the hammer integrates electronic sensors, microcontroller-based logic, and programmable behavior into a functional, structurally reinforced design
 
+Line 132 indicates where I personally ended
+
 ## Material in Repository
 **Power Schematic** - Ki-Cade Schematic file on how the power should work for the hammer
 
@@ -126,6 +128,8 @@ _(Research what works best for you personally)_
 9. Label nets (SDA, SCL, 5V, GND, LED_DATA, BUZZER)
 10. Generate ERC (Electrical Rules Check) report — fix any open pins
 11. Export the file to PDF, this is the schematic
+
+***This was the last step I personally completed. Past here were the steps to do in the future***
 
 ### -- Mechanical Assembly Steps --
   
