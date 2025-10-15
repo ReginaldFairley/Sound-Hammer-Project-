@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "LSM6DSV")(type "KiCad")(uri "/Users/rfair/Downloads/ul_LSM6DSV/KiCADv6/2025-10-02_03-41-46.kicad_sym")(options "")(descr ""))
+)
